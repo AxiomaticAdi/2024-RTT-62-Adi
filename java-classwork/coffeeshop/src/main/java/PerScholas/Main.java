@@ -8,9 +8,8 @@ public class Main {
     private CoffeeShop coffeeShop;
     Scanner scan = new Scanner(System.in);
 
-    public void printMenu() {
-        List<Product> products = coffeeShop.getProducts();
-        for (Product product : products) {
+    public void printProducts() {
+        for (Product product : coffeeShop.getProducts()) {
             System.out.println(product.getName() + ": $" + product.getPrice());
         }
     }
@@ -30,7 +29,7 @@ public class Main {
             choice = scan.nextInt();
 
             if (choice == 1) {
-                printMenu();
+                printProducts();
                 break;
             }
             if (choice == 2) {
@@ -38,11 +37,7 @@ public class Main {
                 break;
             }
             System.out.println("Invalid choice. Try again!");
-
         }
-
-
-
     }
 
     public static void main(String[] args) {
